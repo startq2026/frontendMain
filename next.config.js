@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    serverComponentsExternalPackages: ['mongoose'],
+    serverComponentsExternalPackages: ["mongoose"],
   },
   images: {
     unoptimized: false,
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

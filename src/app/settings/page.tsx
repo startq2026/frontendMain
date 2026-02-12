@@ -4,15 +4,15 @@ export default function SettingsPage() {
       {/* Page Header */}
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Settings</h1>
-        <p className="text-gray-500 mt-1">
-          Configure application settings
-        </p>
+        <p className="text-gray-500 mt-1">Configure application settings</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Database Connection */}
         <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Database Connection</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">
+            Database Connection
+          </h2>
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -37,29 +37,39 @@ export default function SettingsPage() {
 
         {/* Column Mappings */}
         <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Column Mappings</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">
+            Column Mappings
+          </h2>
           <p className="text-sm text-gray-500 mb-4">
             Configure how Excel columns are mapped to data fields
           </p>
           <div className="space-y-3">
             <div className="flex items-center justify-between py-2 border-b border-gray-100">
               <span className="text-sm text-gray-600">Date columns</span>
-              <span className="text-sm text-gray-400">date, Date, DATE, तारीख</span>
+              <span className="text-sm text-gray-400">
+                date, Date, DATE, तारीख
+              </span>
             </div>
             <div className="flex items-center justify-between py-2 border-b border-gray-100">
               <span className="text-sm text-gray-600">Amount columns</span>
-              <span className="text-sm text-gray-400">amount, Amount, Total, Revenue</span>
+              <span className="text-sm text-gray-400">
+                amount, Amount, Total, Revenue
+              </span>
             </div>
             <div className="flex items-center justify-between py-2">
               <span className="text-sm text-gray-600">Distributor columns</span>
-              <span className="text-sm text-gray-400">distributor, Dealer, Name</span>
+              <span className="text-sm text-gray-400">
+                distributor, Dealer, Name
+              </span>
             </div>
           </div>
         </div>
 
         {/* Data Management */}
         <div className="bg-white rounded-xl border border-gray-200 p-6 lg:col-span-2">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Data Management</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">
+            Data Management
+          </h2>
           <div className="flex items-center gap-4">
             <button className="px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50">
               Export All Data
@@ -69,10 +79,11 @@ export default function SettingsPage() {
             </button>
           </div>
           <p className="text-xs text-gray-400 mt-4">
-            ⚠️ Clearing data is irreversible. Make sure to export a backup first.
+            ⚠️ Clearing data is irreversible. Make sure to export a backup
+            first.
           </p>
         </div>
       </div>
     </div>
-  )
+  );
 }

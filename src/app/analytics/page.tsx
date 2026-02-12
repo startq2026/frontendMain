@@ -1,4 +1,4 @@
-import { Filter } from 'lucide-react'
+import { Filter } from "lucide-react";
 
 export default function AnalyticsPage() {
   return (
@@ -11,7 +11,7 @@ export default function AnalyticsPage() {
             Detailed revenue and performance analysis
           </p>
         </div>
-        
+
         {/* Filters */}
         <div className="flex items-center gap-3">
           <select className="px-4 py-2 border border-gray-200 rounded-lg text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500">
@@ -37,7 +37,9 @@ export default function AnalyticsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Monthly Revenue */}
         <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Monthly Revenue</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+            Monthly Revenue
+          </h3>
           <div className="h-64 flex items-center justify-center text-gray-400">
             Upload data to view monthly revenue analysis
           </div>
@@ -45,7 +47,9 @@ export default function AnalyticsPage() {
 
         {/* Quarterly Revenue */}
         <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Quarterly Revenue</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+            Quarterly Revenue
+          </h3>
           <div className="h-64 flex items-center justify-center text-gray-400">
             Upload data to view quarterly revenue analysis
           </div>
@@ -53,12 +57,14 @@ export default function AnalyticsPage() {
 
         {/* Distributor Performance */}
         <div className="bg-white rounded-xl border border-gray-200 p-6 lg:col-span-2">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Distributor Performance</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+            Distributor Performance
+          </h3>
           <div className="h-64 flex items-center justify-center text-gray-400">
             Upload data to view distributor performance
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

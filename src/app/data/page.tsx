@@ -1,4 +1,4 @@
-import { Search, Download, Filter } from 'lucide-react'
+import { Search, Download, Filter } from "lucide-react";
 
 export default function DataPage() {
   return (
@@ -11,7 +11,7 @@ export default function DataPage() {
             View and search all processed records
           </p>
         </div>
-        
+
         <button className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50">
           <Download className="w-4 h-4" />
           Export
@@ -67,7 +67,10 @@ export default function DataPage() {
             </thead>
             <tbody className="divide-y divide-gray-200">
               <tr>
-                <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                <td
+                  colSpan={5}
+                  className="px-6 py-12 text-center text-gray-500"
+                >
                   No data available. Upload Excel files to populate this table.
                 </td>
               </tr>
@@ -77,17 +80,15 @@ export default function DataPage() {
 
         {/* Pagination */}
         <div className="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
-          <p className="text-sm text-gray-500">
-            Showing 0 of 0 records
-          </p>
+          <p className="text-sm text-gray-500">Showing 0 of 0 records</p>
           <div className="flex items-center gap-2">
-            <button 
+            <button
               disabled
               className="px-3 py-1 border border-gray-200 rounded text-sm text-gray-400 cursor-not-allowed"
             >
               Previous
             </button>
-            <button 
+            <button
               disabled
               className="px-3 py-1 border border-gray-200 rounded text-sm text-gray-400 cursor-not-allowed"
             >
@@ -97,5 +98,5 @@ export default function DataPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,26 +1,26 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { usePathname } from 'next/navigation'
-import { 
-  LayoutDashboard, 
-  Upload, 
-  BarChart3, 
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import {
+  LayoutDashboard,
+  Upload,
+  BarChart3,
   FileSpreadsheet,
-  Settings
-} from 'lucide-react'
+  Settings,
+} from "lucide-react";
 
 const navigation = [
-  { name: 'Dashboard', href: '/', icon: LayoutDashboard },
-  { name: 'Upload Data', href: '/upload', icon: Upload },
-  { name: 'Analytics', href: '/analytics', icon: BarChart3 },
-  { name: 'Data Browser', href: '/data', icon: FileSpreadsheet },
-  { name: 'Settings', href: '/settings', icon: Settings },
-]
+  { name: "Dashboard", href: "/", icon: LayoutDashboard },
+  { name: "Upload Data", href: "/upload", icon: Upload },
+  { name: "Analytics", href: "/analytics", icon: BarChart3 },
+  { name: "Data Browser", href: "/data", icon: FileSpreadsheet },
+  { name: "Settings", href: "/settings", icon: Settings },
+];
 
 export default function Sidebar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <aside className="w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col transition-colors duration-200">
@@ -41,7 +41,7 @@ export default function Sidebar() {
       {/* Navigation */}
       <nav className="flex-1 px-4 py-6 space-y-1">
         {navigation.map((item) => {
-          const isActive = pathname === item.href
+          const isActive = pathname === item.href;
           return (
             <Link
               key={item.name}
@@ -49,16 +49,19 @@ export default function Sidebar() {
               className={`
                 flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
                 transition-colors duration-150
-                ${isActive 
-                  ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400' 
-                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
+                ${
+                  isActive
+                    ? "bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400"
+                    : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white"
                 }
               `}
             >
-              <item.icon className={`w-5 h-5 ${isActive ? 'text-primary-500 dark:text-primary-400' : 'text-gray-400 dark:text-gray-500'}`} />
+              <item.icon
+                className={`w-5 h-5 ${isActive ? "text-primary-500 dark:text-primary-400" : "text-gray-400 dark:text-gray-500"}`}
+              />
               {item.name}
             </Link>
-          )
+          );
         })}
       </nav>
 
@@ -74,5 +77,5 @@ export default function Sidebar() {
         </div>
       </div>
     </aside>
-  )
+  );
 }

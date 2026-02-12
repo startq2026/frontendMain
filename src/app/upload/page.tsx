@@ -1,5 +1,5 @@
-import ExcelUploader from '@/components/upload/ExcelUploader'
-import UploadHistory from '@/components/upload/UploadHistory'
+import ExcelUploader from "@/components/upload/ExcelUploader";
+import UploadHistory from "@/components/upload/UploadHistory";
 
 export default function UploadPage() {
   return (
@@ -14,10 +14,17 @@ export default function UploadPage() {
 
       {/* Upload Instructions */}
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-        <h3 className="font-semibold text-amber-800 mb-2">📋 File Requirements</h3>
+        <h3 className="font-semibold text-amber-800 mb-2">
+          📋 File Requirements
+        </h3>
         <ul className="text-sm text-amber-700 space-y-1">
-          <li>• Supported formats: <strong>.xls</strong> and <strong>.xlsx</strong></li>
-          <li>• Maximum file size: <strong>10 MB</strong></li>
+          <li>
+            • Supported formats: <strong>.xls</strong> and{" "}
+            <strong>.xlsx</strong>
+          </li>
+          <li>
+            • Maximum file size: <strong>10 MB</strong>
+          </li>
           <li>• Required columns: Date, Amount, Distributor name</li>
           <li>• Multiple sheets per file are supported</li>
         </ul>
@@ -36,5 +43,5 @@ export default function UploadPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

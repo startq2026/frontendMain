@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import { Bell, Search, User, Moon, Sun } from 'lucide-react'
-import { useTheme } from '@/components/ThemeProvider'
+import { Bell, Search, User, Moon, Sun } from "lucide-react";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function Header() {
-  const { theme, toggleTheme } = useTheme()
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="h-16 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between px-6 transition-colors duration-200">
@@ -25,12 +25,12 @@ export default function Header() {
       {/* Right Section */}
       <div className="flex items-center gap-4">
         {/* Theme Toggle */}
-        <button 
+        <button
           onClick={toggleTheme}
           className="p-2 text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"
           aria-label="Toggle theme"
         >
-          {theme === 'light' ? (
+          {theme === "light" ? (
             <Moon className="w-5 h-5" />
           ) : (
             <Sun className="w-5 h-5" />
@@ -46,8 +46,12 @@ export default function Header() {
         {/* User Menu */}
         <div className="flex items-center gap-3 pl-4 border-l border-gray-200 dark:border-gray-700">
           <div className="text-right">
-            <p className="text-sm font-medium text-gray-900 dark:text-gray-100">Admin User</p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">Sri Siri Publishers</p>
+            <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+              Admin User
+            </p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              Sri Siri Publishers
+            </p>
           </div>
           <button className="w-9 h-9 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
             <User className="w-5 h-5 text-primary-500" />
@@ -55,5 +59,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }
