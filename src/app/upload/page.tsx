@@ -1,33 +1,63 @@
+"use client";
+
 import ExcelUploader from "@/components/upload/ExcelUploader";
 import UploadHistory from "@/components/upload/UploadHistory";
+import PageHeader from "@/components/ui/PageHeader";
+import { FileSpreadsheet, FileText, Calendar, Layers } from "lucide-react";
 
 export default function UploadPage() {
   return (
     <div className="space-y-6">
       {/* Page Header */}
-      <div>
-        <h1 className="text-2xl font-bold text-gray-900">Upload Data</h1>
-        <p className="text-gray-500 mt-1">
-          Import Excel files containing sales and revenue data
-        </p>
-      </div>
+      <PageHeader
+        title="Upload Data"
+        description="Import Excel files containing sales and revenue data"
+      />
 
       {/* Upload Instructions */}
-      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-        <h3 className="font-semibold text-amber-800 mb-2">
-          📋 File Requirements
+      <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border border-amber-200 dark:border-amber-800/50 rounded-2xl p-5 transition-colors">
+        <h3 className="font-semibold text-amber-800 dark:text-amber-300 mb-3 flex items-center gap-2">
+          <FileText className="w-5 h-5" />
+          File Requirements
         </h3>
-        <ul className="text-sm text-amber-700 space-y-1">
-          <li>
-            • Supported formats: <strong>.xls</strong> and{" "}
-            <strong>.xlsx</strong>
-          </li>
-          <li>
-            • Maximum file size: <strong>10 MB</strong>
-          </li>
-          <li>• Required columns: Date, Amount, Distributor name</li>
-          <li>• Multiple sheets per file are supported</li>
-        </ul>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="flex items-center gap-3 p-3 bg-white/60 dark:bg-gray-800/40 rounded-xl">
+            <div className="w-8 h-8 bg-amber-100 dark:bg-amber-800/30 rounded-lg flex items-center justify-center">
+              <FileSpreadsheet className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <p className="text-xs text-amber-600 dark:text-amber-400">Formats</p>
+              <p className="text-sm font-semibold text-amber-800 dark:text-amber-300">.xls, .xlsx</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 p-3 bg-white/60 dark:bg-gray-800/40 rounded-xl">
+            <div className="w-8 h-8 bg-amber-100 dark:bg-amber-800/30 rounded-lg flex items-center justify-center">
+              <Layers className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <p className="text-xs text-amber-600 dark:text-amber-400">Max Size</p>
+              <p className="text-sm font-semibold text-amber-800 dark:text-amber-300">10 MB</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 p-3 bg-white/60 dark:bg-gray-800/40 rounded-xl">
+            <div className="w-8 h-8 bg-amber-100 dark:bg-amber-800/30 rounded-lg flex items-center justify-center">
+              <Calendar className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <p className="text-xs text-amber-600 dark:text-amber-400">Required</p>
+              <p className="text-sm font-semibold text-amber-800 dark:text-amber-300">Date, Amount</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 p-3 bg-white/60 dark:bg-gray-800/40 rounded-xl">
+            <div className="w-8 h-8 bg-amber-100 dark:bg-amber-800/30 rounded-lg flex items-center justify-center">
+              <Layers className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <p className="text-xs text-amber-600 dark:text-amber-400">Sheets</p>
+              <p className="text-sm font-semibold text-amber-800 dark:text-amber-300">Multiple OK</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Main Content Grid */}

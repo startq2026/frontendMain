@@ -11,7 +11,7 @@ export interface IUpload extends Document {
   sheetsProcessed: number
   rowsExtracted: number
   rowsNormalized: number
-  errors: string[]
+  processingErrors: string[]
 }
 
 const UploadSchema = new Schema<IUpload>({
@@ -28,7 +28,7 @@ const UploadSchema = new Schema<IUpload>({
   sheetsProcessed: { type: Number, default: 0 },
   rowsExtracted: { type: Number, default: 0 },
   rowsNormalized: { type: Number, default: 0 },
-  errors: [{ type: String }]
+  processingErrors: [{ type: String }]
 }, {
   timestamps: true
 })

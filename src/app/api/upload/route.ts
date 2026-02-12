@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
       upload.sheetsProcessed = parseResult.sheets.length
       upload.rowsExtracted = parseResult.totalRows
       upload.rowsNormalized = normalizedCount
-      upload.errors = errors.slice(0, 50) // Keep first 50 errors
+      upload.processingErrors = errors.slice(0, 50) // Keep first 50 errors
       await upload.save()
 
       return NextResponse.json({
@@ -138,7 +138,7 @@ export async function POST(request: NextRequest) {
     } catch (parseError) {
       // Update upload as failed
       upload.status = 'failed'
-      upload.errors = [parseError instanceof Error ? parseError.message : 'Parsing failed']
+      upload.processingErrors = [parseError instanceof Error ? parseError.message : 'Parsing failed']
       await upload.save()
 
       return NextResponse.json(
