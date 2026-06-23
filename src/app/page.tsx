@@ -61,7 +61,7 @@ export default function Home() {
           change="+0"
           changeType="neutral"
           icon={FileSpreadsheet}
-          description="Excel files uploaded"
+          description="Files available in Data Browser"
         />
       </div>
 
@@ -102,7 +102,7 @@ export default function Home() {
                   2
                 </span>
                 <span className="text-sm text-primary-800 dark:text-primary-200 font-medium">
-                  Upload Excel files
+                  Upload in Data Browser
                 </span>
               </div>
               <div className="flex items-center gap-3 p-3 bg-white/60 dark:bg-gray-800/40 rounded-xl">
@@ -124,11 +124,11 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap items-center gap-3 mt-4">
               <Link
-                href="/upload"
+                href="/data"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium rounded-xl shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-all"
               >
                 <Upload className="w-4 h-4" />
-                Start Uploading
+                Open Data Browser
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link

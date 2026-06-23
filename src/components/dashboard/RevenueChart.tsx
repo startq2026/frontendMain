@@ -167,8 +167,8 @@ export default function RevenueChart({
         <EmptyState
           icon={BarChart3}
           title="No revenue data yet"
-          description="Upload Excel files to see your revenue trends visualized here"
-          action={{ label: "Upload Data", href: "/upload" }}
+          description="Open Data Browser to upload and inspect revenue records"
+          action={{ label: "Open Data Browser", href: "/data" }}
         />
       )}
     </div>

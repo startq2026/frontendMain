@@ -6,7 +6,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
-  Upload,
   BarChart3,
   FileSpreadsheet,
   Settings,
@@ -17,9 +16,8 @@ import {
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
-  { name: "Upload Data", href: "/upload", icon: Upload },
-  { name: "Analytics", href: "/analytics", icon: BarChart3 },
   { name: "Data Browser", href: "/data", icon: FileSpreadsheet },
+  { name: "Analytics", href: "/analytics", icon: BarChart3 },
   { name: "Settings", href: "/settings", icon: Settings },
 ];
 

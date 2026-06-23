@@ -139,8 +139,8 @@ export default function DistributorTable({
         <EmptyState
           icon={Users}
           title="No distributors yet"
-          description="Upload data to see distributor rankings"
-          action={{ label: "Upload Data", href: "/upload" }}
+          description="Open Data Browser to upload and inspect distributor records"
+          action={{ label: "Open Data Browser", href: "/data" }}
         />
       )}
     </div>

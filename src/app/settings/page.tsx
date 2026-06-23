@@ -1,7 +1,8 @@
 "use client";
 
-import { Database, Table, Trash2, Download, AlertTriangle } from "lucide-react";
+import { Database, ExternalLink, Table } from "lucide-react";
 import PageHeader from "@/components/ui/PageHeader";
+import Link from "next/link";
 
 export default function SettingsPage() {
   return (
@@ -13,35 +14,38 @@ export default function SettingsPage() {
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Database Connection */}
+        {/* Backend Integration */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 transition-colors">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/40 dark:to-primary-800/30 rounded-xl flex items-center justify-center">
               <Database className="w-5 h-5 text-primary-500" />
             </div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Database Connection
+              Backend Integration
             </h2>
           </div>
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                MongoDB URI
+                Active data workflow
               </label>
               <input
                 type="text"
                 disabled
-                value="mongodb://localhost:27017/starq"
+                value="/backend-data/UploadDataBrowser.html"
                 className="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm text-gray-500 dark:text-gray-400 transition-colors"
               />
               <p className="text-xs text-gray-400 dark:text-gray-500 mt-2">
-                Configured via environment variable
+                Uploads and backend actions are handled inside the Data Browser page.
               </p>
             </div>
-            <div className="flex items-center gap-2 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800/50 rounded-xl">
-              <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full animate-pulse" />
-              <span className="text-sm text-yellow-700 dark:text-yellow-400 font-medium">Not connected</span>
-            </div>
+            <Link
+              href="/data"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary-500 text-white rounded-xl text-sm font-medium hover:bg-primary-600 transition-colors"
+            >
+              Open Data Browser
+              <ExternalLink className="w-4 h-4" />
+            </Link>
           </div>
         </div>
 
@@ -79,34 +83,6 @@ export default function SettingsPage() {
                 distributor, Dealer, Name
               </span>
             </div>
-          </div>
-        </div>
-
-        {/* Data Management */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 transition-colors lg:col-span-2">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-10 h-10 bg-gradient-to-br from-info-50 to-info-100 dark:from-info-900/40 dark:to-info-800/30 rounded-xl flex items-center justify-center">
-              <Database className="w-5 h-5 text-info-500" />
-            </div>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Data Management
-            </h2>
-          </div>
-          <div className="flex flex-wrap items-center gap-4">
-            <button className="flex items-center gap-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
-              <Download className="w-4 h-4" />
-              Export All Data
-            </button>
-            <button className="flex items-center gap-2 px-4 py-2.5 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/50 rounded-xl text-sm font-medium text-red-600 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors">
-              <Trash2 className="w-4 h-4" />
-              Clear All Data
-            </button>
-          </div>
-          <div className="flex items-start gap-2 mt-4 p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/50 rounded-xl">
-            <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
-            <p className="text-xs text-amber-700 dark:text-amber-300">
-              Clearing data is irreversible. Make sure to export a backup first.
-            </p>
           </div>
         </div>
       </div>

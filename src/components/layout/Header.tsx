@@ -21,7 +21,6 @@ import { useSidebar } from "@/components/layout/Sidebar";
 
 const pageNames: Record<string, string> = {
   "/": "Dashboard",
-  "/upload": "Upload Data",
   "/analytics": "Analytics",
   "/data": "Data Browser",
   "/settings": "Settings",

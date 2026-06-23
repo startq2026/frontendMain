@@ -6,9 +6,9 @@ import { Upload, BarChart3, FileSpreadsheet, ArrowRight } from "lucide-react";
 export default function QuickActions() {
   const actions = [
     {
-      title: "Upload Excel",
-      description: "Import new sales data",
-      href: "/upload",
+      title: "Upload Data",
+      description: "Open the backend data browser",
+      href: "/data",
       icon: Upload,
       color: "bg-gradient-to-br from-primary-500 to-primary-600",
       shadowColor: "shadow-primary-500/30",
