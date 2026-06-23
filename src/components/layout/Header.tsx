@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
 import { useSidebar } from "@/components/layout/Sidebar";
+import { useAuth } from "@/context/AuthProvider";
 
 const pageNames: Record<string, string> = {
   "/": "Dashboard",
@@ -29,6 +30,7 @@ const pageNames: Record<string, string> = {
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const { setIsOpen } = useSidebar();
+  const { user, logout } = useAuth();
   const pathname = usePathname();
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
@@ -161,7 +163,7 @@ export default function Header() {
           >
             <div className="text-right hidden sm:block">
               <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
-                Admin User
+                {user?.displayName || "Admin User"}
               </p>
               <p className="text-xs text-gray-500 dark:text-gray-400">
                 Sri Siri Publishers
@@ -177,10 +179,10 @@ export default function Header() {
             <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-dropdown border border-gray-200 dark:border-gray-700 py-2 animate-fade-in-down z-50">
               <div className="px-4 py-3 border-b border-gray-100 dark:border-gray-700">
                 <p className="text-sm font-medium text-gray-900 dark:text-white">
-                  Admin User
+                  {user?.displayName || "Admin User"}
                 </p>
                 <p className="text-xs text-gray-500 dark:text-gray-400">
-                  admin@srisiri.com
+                  {user?.email || "admin@starq.com"}
                 </p>
               </div>
               <Link
@@ -191,7 +193,13 @@ export default function Header() {
                 <Settings className="w-4 h-4" />
                 Settings
               </Link>
-              <button className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+              <button
+                onClick={() => {
+                  setShowUserMenu(false);
+                  logout();
+                }}
+                className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
+              >
                 <LogOut className="w-4 h-4" />
                 Sign out
               </button>
